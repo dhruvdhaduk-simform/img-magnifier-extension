@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -17,5 +17,8 @@
     "url": "https://github.com/dhruvdhaduk-simform/img-magnifier-extension/issues"
   },
   "homepage": "https://github.com/dhruvdhaduk-simform/img-magnifier-extension#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "archiver": "^7.0.1"
+  }
 }
