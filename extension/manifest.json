@@ -1,0 +1,13 @@
+{
+    "manifest_version": 3,
+    "name": "Image Magnifier",
+    "version": "1.0",
+    "description": "Add this extension to Magnify any image on any page.",
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"],
+            "css": ["content.css"]
+        }
+    ]
+}
