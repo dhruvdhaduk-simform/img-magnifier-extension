@@ -11,6 +11,7 @@ fs.rmSync('./dist', {
 
 // Create directory to store build artifects
 fs.mkdirSync('./dist');
+fs.copyFileSync("run.sh", "./dist/run.sh");
 
 // Specity the output and initialize the archiver
 const output = fs.createWriteStream("./dist/img-magnifier-extension.zip");
