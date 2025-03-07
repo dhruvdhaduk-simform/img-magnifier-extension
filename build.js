@@ -30,4 +30,3 @@ archive.on("error", (err) => {
 archive.pipe(output);
 archive.directory('./extension', false);
 archive.finalize();
-
