@@ -13,7 +13,7 @@ fs.rmSync('./dist', {
 fs.mkdirSync('./dist');
 fs.copyFileSync("run.sh", "./dist/run.sh");
 
-// Specity the output and initialize the archiver
+// Specify the output and initialize the archiver
 const output = fs.createWriteStream("./dist/img-magnifier-extension.zip");
 const archive = archiver("zip", {
     zlib: { level: 9 },
