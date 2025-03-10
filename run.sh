@@ -26,17 +26,32 @@ curl -o "$ZIP_FILE" "$ZIP_URL"
 # Extract the ZIP file.
 unzip -q "$ZIP_FILE" -d "$EXTRACTED_DIR"
 
-# Find the Chrome executable.
-if command -v "google-chrome" > /dev/null; then
-    CHROME_EXE="google-chrome"
-elif command -v "google-chrome-stable" > /dev/null; then
-    CHROME_EXE="google-chrome-stable"
-elif command -v "chromium" > /dev/null; then
-    CHROME_EXE="chromium"
-elif command -v "chromium-browser" > /dev/null; then
-    CHROME_EXE="chromium-browser"
+
+# Detect the Operating System
+OS=$(uname)
+
+# Find the Chrome Executable
+if [[ "$OS" == "Linux" ]]; then
+    if command -v "google-chrome" > /dev/null; then
+        CHROME_EXE="google-chrome"
+    elif command -v "google-chrome-stable" > /dev/null; then
+        CHROME_EXE="google-chrome-stable"
+    elif command -v "chromium" > /dev/null; then
+        CHROME_EXE="chromium"
+    elif command -v "chromium-browser" > /dev/null; then
+        CHROME_EXE="chromium-browser"
+    else
+        echo "Chrome is not installed. Or could not found."
+        exit 1
+    fi
+elif [[ "$OS" == "Darwin" ]]; then
+    CHROME_EXE="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+    if [[ ! -f "$CHROME_EXE" ]]; then
+        echo "Coundn't found Chrome executable."
+        exit 1
+    fi
 else
-    echo "Chrome is not installed"
+    echo "This OS is not supported. Install the extension manually."
     exit 1
 fi
 
