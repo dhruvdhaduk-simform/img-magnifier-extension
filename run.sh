@@ -3,7 +3,8 @@
 # This scripts downloads deployed extension, extracts it and loads it in Chrome.
 
 log() {
-    echo -e "\e[32m [LOG]:\e[0m $@"
+    # echo -e "\e[32m [LOG]:\e[0m $@"
+    echo " -- [LOG]: $@"
 }
 
 # Check if the link is provided.
@@ -69,4 +70,4 @@ fi
 
 # Load the Extension in Chrome.
 log "Launching Chrome . . ."
-$CHROME_EXE --load-extension="$EXTRACTED_DIR"
+"$CHROME_EXE" --load-extension="$EXTRACTED_DIR"
