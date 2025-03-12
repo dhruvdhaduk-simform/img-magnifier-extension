@@ -1,0 +1,24 @@
+{
+  "name": "img-magnifier-extension",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhruvdhaduk-simform/img-magnifier-extension.git"
+  },
+  "keywords": ["image", "magnifier", "extension", "zoom", "browser"],
+  "author": "Dhruv Dhaduk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhruvdhaduk-simform/img-magnifier-extension/issues"
+  },
+  "homepage": "https://github.com/dhruvdhaduk-simform/img-magnifier-extension#readme",
+  "description": "A browser extension for magnifying images.",
+  "dependencies": {
+    "archiver": "^7.0.1"
+  }
+}
