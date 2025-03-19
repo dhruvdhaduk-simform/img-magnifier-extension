@@ -1,0 +1,36 @@
+.magnifier {
+    all: unset;
+
+    pointer-events: none;
+
+    border: 1px solid blue;
+    background-color: rgba(0 , 0, 255, 35%);
+
+    display: none;
+    z-index: 10000;
+
+    position: fixed;
+}
+
+.magnified-result {
+    all: unset;
+
+    border: 2px solid blue;
+
+    aspect-ratio: 1;
+    overflow: hidden;
+
+    display: none;
+
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+}
+
+.magnified-result > img {
+    all: unset;
+
+    display: block;
+    position: absolute;
+}
