@@ -77,6 +77,31 @@ function calculateResultContainerDimensions(img) {
 // Attach event handlers for a particular image.
 function attachEventListeners(img) {
 
+    img.addEventListener("click", function(e) {
+        if (!e.ctrlKey) return;
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        if (e.shiftKey) {
+            if (MAGNIFICATION > 1) {
+                MAGNIFICATION--;
+            }
+        }
+        else {
+            if (MAGNIFICATION < 7) {
+                MAGNIFICATION++;
+            }
+        }
+
+        img.dispatchEvent(new MouseEvent("mousemove", {
+            ctrlKey: true,
+            clientX: e.clientX,
+            clientY: e.clientY,
+        }));
+
+    });
+
     img.addEventListener("mousemove", function(e) {
         // Hide the magnifier any its result when Ctrl is key is not pressed.
         if (!e.ctrlKey) {
