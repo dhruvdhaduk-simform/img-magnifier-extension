@@ -165,8 +165,26 @@ function attachEventListeners(img) {
     });
 }
 
+// Mutation Observer to attach event handlers when any new image is inserted.
+const observer = new MutationObserver((mutationsList) => {
+    mutationsList.forEach((mutation) => {
+        if (mutation.type === "childList") {
+            mutation.addedNodes.forEach((node) => {
+                if (node.tagName === "img") {
+                    attachEventListeners(node);
+                }
+                else if (node.querySelectorAll) {
+                    node.querySelectorAll("img").forEach(attachEventListeners);
+                }
+            });
+        }
+    });
+});
+
 // Select all images on the page.
 const images = document.querySelectorAll("img");
 
 // Attach event handlers to all images on page.
 images.forEach(attachEventListeners);
+
+observer.observe(document.body, { childList: true, subtree: true });
