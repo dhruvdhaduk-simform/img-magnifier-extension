@@ -1,5 +1,10 @@
 "use strict";
 
+// Few constants regarding magnification and dimensions.
+let MAGNIFICATION = 3;
+const RESULT_CONTAINER_MARGIN = 10;
+const RESULT_CONTAINER_MAX_WIDTH = 300;
+
 console.log("Image Magnifier extension is running.");
 
 // Create the div for magnifier box over the images.
@@ -16,11 +21,6 @@ document.body.append(magnifiedResult);
 
 // Ensures smooth movement of the magnifier.
 let isMoving = false;
-
-// Few constants regarding magnification and dimensions.
-let MAGNIFICATION = 3;
-const RESULT_CONTAINER_MARGIN = 10;
-const RESULT_CONTAINER_MAX_WIDTH = 300;
 
 // Move the magnifier box at specified position.
 function moveMagnifier(x, y) {
