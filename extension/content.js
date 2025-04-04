@@ -14,7 +14,7 @@ const magnifiedImg = document.createElement("img");
 magnifiedResult.append(magnifiedImg);
 document.body.append(magnifiedResult);
 
-// It is used to ensure smooth movement of magnifier.
+// Ensures smooth movement of the magnifier.
 let isMoving = false;
 
 // Few constants regarding magnification and dimensions.
@@ -77,7 +77,7 @@ function calculateResultContainerDimensions(img) {
 // Attach event handlers for a particular image.
 function attachEventListeners(img) {
 
-    img.addEventListener("click", function(e) {
+    img.addEventListener("click", function (e) {
         if (!e.ctrlKey) return;
 
         e.preventDefault();
@@ -102,8 +102,8 @@ function attachEventListeners(img) {
 
     });
 
-    img.addEventListener("mousemove", function(e) {
-        // Hide the magnifier any its result when Ctrl is key is not pressed.
+    img.addEventListener("mousemove", function (e) {
+        // Hide the magnifier and its result when the Ctrl key is not pressed
         if (!e.ctrlKey) {
             magnifier.style.display = "none";
             magnifiedResult.style.display = "none";
@@ -121,7 +121,7 @@ function attachEventListeners(img) {
         // Set the source of result image.
         magnifiedImg.src = img.src;
 
-        // Show to magnifier box and magnified image container.
+        // Show the magnifier box and the magnified image container.
         magnifier.style.display = "block";
         magnifiedResult.style.display = "block";
 
@@ -149,7 +149,7 @@ function attachEventListeners(img) {
         let clipX = magnifierX - x;
         let clipY = magnifierY - y;
 
-        // Natural Width & Height or original image (ignoring the layout).
+        // Natural width & height of the original image (ignoring layout constraints).
         const imgNaturalWidth = img.naturalWidth;
         const imgNaturalHeight = img.naturalHeight;
 
@@ -184,7 +184,7 @@ function attachEventListeners(img) {
     });
 
     // Hide the magnifier and magnified result container on "mouseleave" event.
-    img.addEventListener("mouseleave", function() {
+    img.addEventListener("mouseleave", function () {
         magnifier.style.display = "none";
         magnifiedResult.style.display = "none";
     });
