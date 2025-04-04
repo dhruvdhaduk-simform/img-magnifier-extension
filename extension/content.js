@@ -30,7 +30,7 @@ function moveMagnifier(x, y) {
 }
 
 // Calculate position and size of Magnified result container to show it where there is space.
-function calculateResultContainerDimensions(img) {
+function positionMagnifiedResult(img) {
     // Get the position of original image.
     const { x, y, right, bottom } = img.getBoundingClientRect();
 
@@ -126,7 +126,7 @@ function attachEventListeners(img) {
         magnifiedResult.style.display = "block";
 
         // Calculate position and size of Magnified result container to show it where there is space.
-        calculateResultContainerDimensions(img);
+        positionMagnifiedResult(img);
 
         const resultContainerWidth = magnifiedResult.offsetWidth;
         const resultContainerHeight = magnifiedResult.offsetHeight;
