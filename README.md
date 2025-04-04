@@ -23,3 +23,9 @@ curl https://img-magnifier-extension.netlify.app/run.sh | bash -s -- https://img
 - Turn on developer mode.
 - Click on the `Load Unpacked` button.
 - Select the extracted extension folder.
+
+## How to use
+- Go to any site with images. (e.g. https://x-skeleton-ui.netlify.app/)
+- Hover over any image while holding Ctrl key to magnify image.
+- Click while holding Ctrl key to increase magnification.
+- Click while holding Ctrl+Shift key to decrease magnification.
